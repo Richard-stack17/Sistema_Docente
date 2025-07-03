@@ -24,6 +24,7 @@
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
     --radius-md: 0.375rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -207,6 +208,12 @@
   .my-5 {
     margin-block: calc(var(--spacing) * 5);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
   .block {
     display: block;
   }
@@ -250,8 +257,17 @@
   .p-0 {
     padding: calc(var(--spacing) * 0);
   }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
   .text-center {
     text-align: center;
+  }
+  .text-left {
+    text-align: left;
   }
   .font-\[RobotoSlab\] {
     font-family: RobotoSlab;
@@ -262,6 +278,15 @@
   }
   .text-\[1\.5rem\] {
     font-size: 1.5rem;
+  }
+  .text-\[1\.6rem\] {
+    font-size: 1.6rem;
+  }
+  .text-\[1\.7rem\] {
+    font-size: 1.7rem;
+  }
+  .text-\[1\.8rem\] {
+    font-size: 1.8rem;
   }
   .text-\[1rem\] {
     font-size: 1rem;
@@ -276,6 +301,10 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
   }
   .text-blue-100 {
     color: var(--color-blue-100);

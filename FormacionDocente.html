@@ -8,9 +8,9 @@
   <link href="./src/output.css" rel="stylesheet">
   <style>
     :root {
-      --color-primario: #1a365d;
+      --color-primario: #2357a0;
       --color-secundario: #2c5282;
-      --color-acento: #63b3ed;
+      --color-acento: #1aaea6;
       --color-fondo: #f7fafc;
       --color-vigente: #48bb78;
       --color-vencido: #e53e3e;
@@ -36,7 +36,7 @@
 
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: var(--color-fondo);
       margin: 0;
       padding: 0;
@@ -126,9 +126,8 @@
     }
 
     .search-container {
-      margin-top: 20px;
       display: flex;
-      justify-content: center;
+      justify-content: left;
     }
 
     .search-container input {
@@ -202,40 +201,47 @@
   <div id="nav-placeholder"></div>
 
   <div class="container">
-    <h1 class="text-[2rem] font-bold text-blue-900 my-5 text-center">Registro de Formación Docente - UNAC</h1>
+    <h1 class="text-[2rem] font-bold text-blue-900 my-5 text-center">Formación Docente UNAC</h1>
+    <h2 class="text-[1.6rem] font-bold text-blue-900 my-5 text-left">Registro de Formación Docente</h1>
 
-    <form id="formFormacion">
-      <input type="text" id="nombreDocente" placeholder="Nombre del Docente" required />
-      <select id="tipoFormacion" required>
-        <option value="">Tipo de Formación</option>
-        <option value="Grado">Grado</option>
-        <option value="Diplomado">Diplomado</option>
-        <option value="Curso">Curso</option>
-        <option value="Movilidad">Movilidad</option>
-      </select>
-      <input type="text" id="descripcion" placeholder="Descripción" required />
-      <input type="date" id="fechaVencimiento" required />
-      <button type="submit">Registrar Formación</button>
-    </form>
+      <form id="formFormacion">
+        <input type="text" id="nombreDocente" placeholder="Nombre del Docente" required />
+        <select id="tipoFormacion" required>
+          <option value="">Tipo de Formación</option>
+          <option value="Grado">Grado</option>
+          <option value="Diplomado">Diplomado</option>
+          <option value="Curso">Curso</option>
+          <option value="Movilidad">Movilidad</option>
+        </select>
+        <input type="text" id="descripcion" placeholder="Descripción" required />
+        <input type="date" id="fechaVencimiento" required />
+        <button type="submit">Registrar Formación</button>
+      </form>
 
-    <button class="export-btn" onclick="exportarExcel()">Exportar a Excel</button>
 
-    <div class="search-container">
-      <input type="text" id="buscador" placeholder="Buscar por nombre del docente...">
-    </div>
-
-    <table id="tablaFormacionesCompleta" class="shadow-lg">
-      <thead>
-        <tr>
-          <th>Docente</th>
-          <th>Tipo</th>
-          <th>Descripción</th>
-          <th>Fecha Vencimiento</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody id="tablaFormaciones"></tbody>
-    </table>
+      <section class="pt-4">
+        <h2 class="text-[1.6rem] font-bold text-blue-900 my-5 text-left">Formacion por docente</h2>
+        <div>
+          <div class="search-container">
+            <input type="text" id="buscador" placeholder="Buscar por nombre del docente...">
+          </div>
+          <div class="mt-5">
+            <button class="export-btn" onclick="exportarExcel()">Exportar a Excel</button>
+          </div>
+        </div>
+        <table id="tablaFormacionesCompleta" class="shadow-lg">
+          <thead>
+            <tr>
+              <th>Docente</th>
+              <th>Tipo</th>
+              <th>Descripción</th>
+              <th>Fecha Vencimiento</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tablaFormaciones"></tbody>
+        </table>
+      </section>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
