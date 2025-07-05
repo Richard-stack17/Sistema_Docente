@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Encuesta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eaf6ff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #003d66;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background-color: #ffffff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #003d66;
+      color: white;
+    }
+
+    td:first-child {
+      text-align: center;
+    }
+
+    td:nth-child(2) {
+      text-align: left;
+    }
+
+    .save-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #0a7f9f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="titulo-curso">Curso</h2>
+  <h3 id="datos-curso">Sección y Docente</h3>
+
+  <form id="form-encuesta">
+
+    <!-- Área Profesional -->
+    <h3>ÁREA: PROFESIONAL</h3>
+    <table>
+      <tr>
+        <th>Nº</th>
+        <th>Preguntas</th>
+        <th>Deficiente</th>
+        <th>Insuficiente</th>
+        <th>Regular</th>
+        <th>Bueno</th>
+        <th>Excelente</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>Demuestra dominio de la asignatura</td>
+        <td><input type="radio" name="p1"></td>
+        <td><input type="radio" name="p1"></td>
+        <td><input type="radio" name="p1"></td>
+        <td><input type="radio" name="p1"></td>
+        <td><input type="radio" name="p1"></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Responde con claridad las preguntas formuladas por los estudiantes</td>
+        <td><input type="radio" name="p2"></td>
+        <td><input type="radio" name="p2"></td>
+        <td><input type="radio" name="p2"></td>
+        <td><input type="radio" name="p2"></td>
+        <td><input type="radio" name="p2"></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Vincula los temas con el perfil profesional</td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Vincula los temas con situaciones reales de la carrera</td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+        <td><input type="radio" name="p3"></td>
+      </tr>
+    </table>
+
+    <!-- Área Didáctica -->
+    <h3>ÁREA: DIDÁCTICA</h3>
+    <table>
+      <tr>
+        <th>Nº</th>
+        <th>Preguntas</th>
+        <th>Deficiente</th>
+        <th>Insuficiente</th>
+        <th>Regular</th>
+        <th>Bueno</th>
+        <th>Excelente</th>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Explica su clase de manera clara y ordenada</td>
+        <td><input type="radio" name="p4"></td>
+        <td><input type="radio" name="p4"></td>
+        <td><input type="radio" name="p4"></td>
+        <td><input type="radio" name="p4"></td>
+        <td><input type="radio" name="p4"></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Promueve y mantiene el interés del estudiante durante el desarrollo de sus clases</td>
+        <td><input type="radio" name="p5"></td>
+        <td><input type="radio" name="p5"></td>
+        <td><input type="radio" name="p5"></td>
+        <td><input type="radio" name="p5"></td>
+        <td><input type="radio" name="p5"></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Presenta y explica el sílabo en el primer día de clases</td>
+        <td><input type="radio" name="p6"></td>
+        <td><input type="radio" name="p6"></td>
+        <td><input type="radio" name="p6"></td>
+        <td><input type="radio" name="p6"></td>
+        <td><input type="radio" name="p6"></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Desarrolla la clase según los temas programados</td>
+        <td><input type="radio" name="p7"></td>
+        <td><input type="radio" name="p7"></td>
+        <td><input type="radio" name="p7"></td>
+        <td><input type="radio" name="p7"></td>
+        <td><input type="radio" name="p7"></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Atiende las inquietudes académicas dentro y fuera del aula</td>
+        <td><input type="radio" name="p8"></td>
+        <td><input type="radio" name="p8"></td>
+        <td><input type="radio" name="p8"></td>
+        <td><input type="radio" name="p8"></td>
+        <td><input type="radio" name="p8"></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Las actividades complementarias ayudan a comprender los temas de las clases</td>
+        <td><input type="radio" name="p9"></td>
+        <td><input type="radio" name="p9"></td>
+        <td><input type="radio" name="p9"></td>
+        <td><input type="radio" name="p9"></td>
+        <td><input type="radio" name="p9"></td>
+      </tr>
+    </table>
+
+    <!-- Área Personal -->
+    <h3>ÁREA: PERSONAL</h3>
+    <table>
+      <tr>
+        <th>Nº</th>
+        <th>Preguntas</th>
+        <th>Deficiente</th>
+        <th>Insuficiente</th>
+        <th>Regular</th>
+        <th>Bueno</th>
+        <th>Excelente</th>
+      </tr>
+      <tr><td>10</td><td>Cumple puntualmente con su horario de clases</td><td><input type="radio" name="p10"></td><td><input type="radio" name="p10"></td><td><input type="radio" name="p10"></td><td><input type="radio" name="p10"></td><td><input type="radio" name="p10"></td></tr>
+      <tr><td>11</td><td>Evalúa de acuerdo a lo establecido en el sílabo</td><td><input type="radio" name="p11"></td><td><input type="radio" name="p11"></td><td><input type="radio" name="p11"></td><td><input type="radio" name="p11"></td><td><input type="radio" name="p11"></td></tr>
+      <tr><td>12</td><td>Respeta la programación establecida por la Escuela Profesional</td><td><input type="radio" name="p12"></td><td><input type="radio" name="p12"></td><td><input type="radio" name="p12"></td><td><input type="radio" name="p12"></td><td><input type="radio" name="p12"></td></tr>
+      <tr><td>13</td><td>El trato del docente a los estudiantes es con respeto</td><td><input type="radio" name="p13"></td><td><input type="radio" name="p13"></td><td><input type="radio" name="p13"></td><td><input type="radio" name="p13"></td><td><input type="radio" name="p13"></td></tr>
+      <tr><td>14</td><td>Refleja un comportamiento ético y moral</td><td><input type="radio" name="p14"></td><td><input type="radio" name="p14"></td><td><input type="radio" name="p14"></td><td><input type="radio" name="p14"></td><td><input type="radio" name="p14"></td></tr>
+      <tr><td>15</td><td>Promueve de manera crítica diferentes formas de ver las cosas</td><td><input type="radio" name="p15"></td><td><input type="radio" name="p15"></td><td><input type="radio" name="p15"></td><td><input type="radio" name="p15"></td><td><input type="radio" name="p15"></td></tr>
+    </table>
+
+    <!-- Área Social y Medioambiental -->
+    <h3>ÁREA: SOCIAL Y MEDIOAMBIENTAL</h3>
+    <table>
+      <tr>
+        <th>Nº</th>
+        <th>Preguntas</th>
+        <th>Deficiente</th>
+        <th>Insuficiente</th>
+        <th>Regular</th>
+        <th>Bueno</th>
+        <th>Excelente</th>
+      </tr>
+      <tr><td>16</td><td>Mantiene la disciplina del aula</td><td><input type="radio" name="p16"></td><td><input type="radio" name="p16"></td><td><input type="radio" name="p16"></td><td><input type="radio" name="p16"></td><td><input type="radio" name="p16"></td></tr>
+      <tr><td>17</td><td>Promueve el interés en el cuidado del medio ambiente</td><td><input type="radio" name="p17"></td><td><input type="radio" name="p17"></td><td><input type="radio" name="p17"></td><td><input type="radio" name="p17"></td><td><input type="radio" name="p17"></td></tr>
+      <tr><td>18</td><td>Fomenta el respeto a las diferentes opiniones</td><td><input type="radio" name="p18"></td><td><input type="radio" name="p18"></td><td><input type="radio" name="p18"></td><td><input type="radio" name="p18"></td><td><input type="radio" name="p18"></td></tr>
+      <tr><td>19</td><td>Logra que el ambiente de clase sea cómodo y agradable</td><td><input type="radio" name="p19"></td><td><input type="radio" name="p19"></td><td><input type="radio" name="p19"></td><td><input type="radio" name="p19"></td><td><input type="radio" name="p19"></td></tr>
+    </table>
+
+    <button type="button" class="save-btn" onclick="validarYGuardar()">Guardar y Volver</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const curso = params.get("curso");
+    const seccion = params.get("seccion");
+    const profesor = params.get("profesor");
+
+    document.getElementById("titulo-curso").textContent = curso || "Curso";
+    document.getElementById("datos-curso").innerHTML = `SECCIÓN: ${seccion || "???"} <br> DOCENTE: ${profesor || "???"}`;
+
+    function validarYGuardar() {
+      const form = document.getElementById("form-encuesta");
+      const totalPreguntas = 19;
+      let completo = true;
+
+      for (let i = 1; i <= totalPreguntas; i++) {
+        const opciones = form.querySelectorAll(`input[name="p${i}"]`);
+        let marcada = false;
+        opciones.forEach(op => { if (op.checked) marcada = true; });
+        if (!marcada) completo = false;
+      }
+
+      if (!completo) {
+        alert("⚠️ Por favor responde todas las preguntas antes de guardar.");
+        return;
+      }
+
+      const idCurso = encodeURIComponent(`${curso}_${seccion}`);
+      localStorage.setItem("encuesta_" + idCurso, "completado");
+
+      window.location.href = "EvaluacionE.html";
+    }
+  </script>
+
+</body>
+</html>

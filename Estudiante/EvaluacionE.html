@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Encuesta Estudiantil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #ccc;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #0a7f9f;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #d9f0f9;
+    }
+
+    th {
+      background-color: #0a7f9f;
+      color: white;
+      padding: 10px;
+    }
+
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    .loginunac {
+      width: 70px;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    .encuesta-btn {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .encuesta-btn.completado {
+      background-color: green !important;
+      cursor: not-allowed;
+    }
+
+    .nota {
+      background-color: #c9f5fd;
+      border: 1px solid #7bd7ef;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .nota strong {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img  class="loginunac"   src="https://upload.wikimedia.org/wikipedia/commons/1/13/Universidad-nacional-del-callao.png" alt="Logo">
+    <h1>Encuesta Estudiantil</h1>
+  </header>
+
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Curso</th>
+          <th>Sección</th>
+          <th>Profesor</th>
+          <th>Encuesta</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-cursos">
+        <!-- Cursos serán insertados dinámicamente -->
+      </tbody>
+    </table>
+
+    <div class="nota">
+      <strong>¿Cómo realizar la encuesta?</strong><br>
+      • Hacer clic en cada uno de los íconos (de color naranja) que se encuentran a la derecha de cada curso.<br>
+      • <strong>RECUERDA: LOS RESULTADOS DE LA ENCUESTA SON ANÓNIMOS.</strong>
+    </div>
+  </div>
+
+  <script>
+    const cursos = [
+      {
+        codigo: "SOP051",
+        curso: "GESTIÓN DE PROCESOS TECNOLÓGICOS",
+        seccion: "01S",
+        profesor: "MALCA VICENTE EDDIE CHRISTIAN"
+      },
+      {
+        codigo: "SOP114",
+        curso: "ELABORACIÓN DE PROYECTOS DE INVESTIGACIÓN",
+        seccion: "01S",
+        profesor: "ARADIEL CASTAÑEDA HILARIO"
+      },
+      {
+        codigo: "SOP121",
+        curso: "REDES Y COMUNICACIONES I",
+        seccion: "01S",
+        profesor: "VILCHEZ INGA CESAR"
+      },
+      {
+        codigo: "SOP910",
+        curso: "PROYECTOS DE SISTEMA DE INFORMACIÓN",
+        seccion: "01S",
+        profesor: "RAMIREZ VELIZ JUAN FRANCISCO"
+      },
+      {
+        codigo: "SOP959",
+        curso: "GESTIÓN DEL CONOCIMIENTO",
+        seccion: "01S",
+        profesor: "HUATAY ENRIQUEZ REENATY AMANDA"
+      },
+      {
+        codigo: "SOP820",
+        curso: "FORMULACIÓN Y EVALUACIÓN DE PROYECTOS DE INVERSIÓN",
+        seccion: "01S",
+        profesor: "ZAPATA VILLAR LOYO PEPE"
+      }
+    ];
+
+    const tbody = document.getElementById("tabla-cursos");
+
+    cursos.forEach(c => {
+      const idCurso = encodeURIComponent(`${c.curso}_${c.seccion}`);
+      const yaRespondido = localStorage.getItem("encuesta_" + idCurso) === "completado";
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${c.codigo}</td>
+        <td>${c.curso}</td>
+        <td>${c.seccion}</td>
+        <td>${c.profesor}</td>
+        <td>
+          <a href="encuesta.html?curso=${encodeURIComponent(c.curso)}&seccion=${encodeURIComponent(c.seccion)}&profesor=${encodeURIComponent(c.profesor)}">
+            <button class="encuesta-btn ${yaRespondido ? 'completado' : ''}" ${yaRespondido ? 'disabled' : ''}>
+              ${yaRespondido ? 'COMPLETADO' : 'ENCUESTA'}
+            </button>
+          </a>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  </script>
+
+</body>
+</html>

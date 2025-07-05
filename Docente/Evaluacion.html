@@ -1,346 +1,417 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
-  <title>HU01 - Evaluación del Sílabo y SGA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluación del Sílabo y Plataforma</title>
   <link href="./src/output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <style>
+    :root {
+      --color-primario: #2357a0;
+      --color-secundario: #2c5282;
+      --color-acento: #1aaea6;
+      --color-fondo: #f7fafc;
+      --color-vigente: #48bb78;
+      --color-vencido: #e53e3e;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8fafc;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--color-fondo);
       margin: 0;
       padding: 0;
     }
+nav {
+  background-color: #2c5282;
+  padding: 1rem;
+  text-align: center;
+}
 
-    nav {
-      background-color: #2c5282;
-      padding: 1rem;
-      text-align: center;
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #b4c7e6;
+}
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-size: 14px;
     }
 
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-size: 1rem;
+    .form-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 10px;
     }
 
-   nav a:hover {
-      color: #b4c7e6;
-    }
-
-
-
-
-    form {
-      display: grid;
-      gap: 15px;
+    .form-group {
+      flex: 1;
     }
 
     label {
-      font-weight: 600;
-      color: #1e293b;
-    }
-
-    select,
-    input,
-    button {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #0337ae;
-      color: white;
       font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #0f172a;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 3px;
+    }
+
+    .question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 6px 0;
+      padding: 6px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .question span {
+      flex: 1;
+      font-size: 13.5px;
+    }
+
+    .options {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .options label {
+      font-weight: normal;
+      font-size: 13px;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-top: 20px;
+      background-color: #2c5282;
+      color: white;
       border: none;
+      border-radius: 4px;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #0b0695;
+      background-color: #0f2b74;
     }
 
     #searchBox {
-      padding: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      padding: 8px;
       width: 100%;
       max-width: 300px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 13px;
     }
 
     table {
       width: 100%;
       margin-top: 20px;
       border-collapse: collapse;
-      background-color: #f1f5f9;
-      border-radius: 10px;
-      overflow: hidden;
+      font-size: 13px;
     }
 
-    th,
-    td {
-      padding: 14px 12px;
-      text-align: left;
-      border-bottom: 1px solid #e2e8f0;
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: center;
     }
 
     th {
       background-color: #2c5282;
-      color: #f1f5f9;
-      font-weight: bold;
-      text-transform: uppercase;
+      color: white;
     }
 
     tr:nth-child(even) {
-      background-color: #e5f3f8;
+      background-color: #f1f5f9;
     }
+  
 
-    tr:hover {
-      background-color: #d1e8f3;
-    }
-
-    td {
-      color: #0f172a;
-    }
-
-    td:nth-child(3),
-    td:nth-child(4),
-    td:nth-child(5),
-    td:nth-child(6) {
-      text-align: center;
-    }
-
-    td,
-    th {
-      border-left: 1px solid #e2e8f0;
-      border-right: 1px solid #e2e8f0;
-    }
-
-    td:first-child,
-    th:first-child {
-      border-left: none;
-    }
-
-    td:last-child,
-    th:last-child {
-      border-right: none;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 0.7s ease-in-out;
-    }
   </style>
 </head>
-
 <body>
   <div id="nav-placeholder"></div>
   <div class="container">
-    <section>
-      <h2 class="text-[2rem] font-bold text-blue-900 my-5 text-center">Evaluación del Sílabo y SGA</h2>
-      <form>
-        <label>Profesor</label>
-        <select>
-          <option>HUAMAN RUIZ JUAN CARLOS</option>
-          <option>TRUJILLO VARGAS HÉCTOR</option>
-          <option>PALACIOS RAMIREZ MIGUEL</option>
-          <option>FLORES CARRASCO RICARDO</option>
-          <option>ROJAS PEREZ JUAN</option>
-          <option>CHAVEZ MENDOZA PEDRO</option>
-          <option>VILLANUEVA GONZÁLEZ LUIS</option>
-          <option>GARCÍA RIVERA ANDREA</option>
-          <option>PÉREZ PÉREZ JORGE</option>
-        </select>
+    <form id="formulario">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Profesor:</label>
+          <select name="nombres" class="select-buscable" required>
+            <option></option>
+           <option>Juscamayta Ramírez Luis Alberto</option>
+            <option>Rocha Fernández Víctor Edgardo</option>
+            <option>Ponce Fretel Santiago Eli</option>
+            <option>Palomino Nazar Lizberlis Lourdes</option>
+            <option>Bermeo Noriega Manuel Francisco</option>
+            <option>Garay Torres José Marcelino</option>
+            <option>Tasayco Matías Néstor Raúl</option>
+            <option>Torres Alvarado Sally Karina</option>
+            <option>Reinoso Palacios Artemio Rubén</option>
+            <option>Mas Azahuanche Guillermo Antonio</option>
+            <option>Arauco Benavides Aquiles</option>
+            <option>Figueroa Yalan Juan Fidel</option>
+            <option>Farfan Aguilar Jose Antonio</option>
+            <option>Garcaa Diaz Bertila Liduvina</option>
+            <option>Zevallos Vera Erika Juana</option>
+            <option>Tamayo De La Cruz Felix Erick</option>
+            <option>Ortega Rojas Yesmi Katia</option>
+            <option>Vilcapuma Malpica Hernán Mario</option>
+            <option>Salazar Mendoza Hector</option>
+            <option>Grados Espinoza Herbert Junior</option>
+            <option>Valdivia Sánchez Luis Alberto</option>
+            <option>Torre Camones Anival Alfredo</option>
+            <option>Ramirez Veliz Juan Francisco</option>
+            <option>Pomachagua Pérez Germán Elías</option>
+            <option>Huatay Enríquez Reenaty Amanda</option>
+            <option>Malca Vicente Eddie Christian</option>
+            <option>Zapata Villar Loyo Pepe</option>
+            <option>Salazar Villavicencio Ismael Edwin</option>
+            <option>Vilchez Inga Cesar</option>
+            <option>Arteaga Cortez Humberto Urbano</option>
+            <option>Aradiel Castañeda Hilario</option>
+            <option>Alcantara Ramerez Manuel Abelardo</option>
+            <option>Incacari Sancho Gerber Federico</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Curso:</label>
+          <select name="curso" class="select-buscable" required>
+            <option></option>
+            <option>Actividades Culturales</option>
+<option>Cálculo I</option>
+<option>Economía de la Empresa</option>
+<option>Idioma I</option>
+<option>Matemática Básica</option>
+<option>Teoría de la Información y Codificación</option>
+<option>Cálculo II</option>
+<option>Contabilidad Empresarial</option>
+<option>Física I</option>
+<option>Idioma II</option>
+<option>Introducción a la Ingeniería de Sistemas</option>
+<option>Programación Estructurada</option>
+<option>Base de Datos I</option>
+<option>Cálculo III</option>
+<option>Física II</option>
+<option>Idioma III</option>
+<option>Metodología de la Investigación y Redacción</option>
+<option>Programación Orientada a Objetos I</option>
+<option>Base de Datos II</option>
+<option>Circuitos Eléctricos y Electrónicos</option>
+<option>Programación Orientada a Objetos II</option>
+<option>Programación Web I</option>
+<option>Teoría de Sistemas</option>
+<option>Base de Datos III</option>
+<option>Costos y Presupuesto</option>
+<option>Investigación de Operaciones</option>
+<option>Programación Web II</option>
+<option>Sistemas Digitales</option>
+<option>Análisis de Sistemas de Información</option>
+<option>Arquitectura y Organización de la Computadora</option>
+<option>Estadística para la Investigación Científica</option>
+<option>Métodos Numéricos</option>
+<option>Robótica y Automatización de Procesos</option>
+<option>Simulación de Sistemas</option>
+<option>Dinámica de Sistemas</option>
+<option>Diseño de Sistema de Información</option>
+<option>Diseño y Gestión de Procesos Organizacionales</option>
+<option>Ingeniería Económica y Financiera</option>
+<option>Modelo de Procesos Organizacionales</option>
+<option>Sistemas Operativos</option>
+<option>Telecomunicaciones</option>
+<option>Formulación y Evaluación de Proyectos de Inversión</option>
+<option>Gestión del Conocimiento</option>
+<option>Proyectos de Sistema de Información</option>
+<option>Redes y Comunicaciones I</option>
+<option>Sistema de Gestión de Calidad</option>
+<option>Taller de Procesos Organizacionales</option>
+<option>Teoría de Lenguajes y Compiladores</option>
+<option>Aplicaciones de Negocios Electrónicos</option>
+<option>Elaboración de Proyectos de Investigación</option>
+<option>Gestión de Procesos Tecnológicos</option>
+<option>Ingeniería de Software</option>
+<option>Proyecto de Sistemas</option>
+<option>Redes de Comunicación II</option>
+<option>Sistemas Complejos</option>
+<option>Auditoría de Sistemas</option>
+<option>Inteligencia de Negocios</option>
+<option>Planeamiento Estratégico</option>
+<option>Realidad Virtual</option>
+<option>Seguridad de la Información</option>
+<option>Sistemas Basados en Conocimiento</option>
+<option>Trabajo de Investigación</option>
+            
+          </select>
+        </div>
+      </div>
 
-        <label>Curso</label>
-        <select>
-          <option>Actividades Culturales</option>
-          <option>Cálculo I</option>
-          <option>Economía de la Empresa</option>
-          <option>Idioma I</option>
-          <option>Matemática Básica</option>
-          <option>Teoría de la Información y Codificación</option>
-          <option>Cálculo II</option>
-          <option>Contabilidad Empresarial</option>
-          <option>Dibujo y Geometría Descriptiva</option>
-          <option>Física I</option>
-        </select>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Facultad:</label>
+          <select name="facultad" class="select-buscable" required>
+            <option></option>
+            <option>FIIS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Escuela:</label>
+          <select name="escuela" class="select-buscable" required>
+            <option></option>
+            <option>Ingeniería de Sistemas</option>
+            <option>Ingeniería Industrial</option>
+          </select>
+        </div>
+      </div>
 
-        <label>Sílabo Subido</label>
-        <select>
-          <option>Sí</option>
-          <option>No</option>
-        </select>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Código:</label>
+          <input type="text" name="codigo" required>
+        </div>
+        <div class="form-group"></div>
+      </div>
 
-        <label>Estructura adecuada</label>
-        <select>
-          <option>Sí</option>
-          <option>No</option>
-        </select>
+      <div class="section-title">Evaluación del Sílabo</div>
+      <div class="question"><span>1. ¿Lo subió en el SGA en la semana del inicio de clases?</span><div class="options"><label><input type="radio" name="p1" value="Sí" required> Sí</label><label><input type="radio" name="p1" value="No"> No</label></div></div>
+      <div class="question"><span>2. ¿Tiene la estructura del modelo oficial?</span><div class="options"><label><input type="radio" name="p2" value="Sí" required> Sí</label><label><input type="radio" name="p2" value="No"> No</label></div></div>
+      <div class="question"><span>3. ¿Está articulado con las competencias del perfil de egreso?</span><div class="options"><label><input type="radio" name="p3" value="Sí" required> Sí</label><label><input type="radio" name="p3" value="No"> No</label></div></div>
+      <div class="question"><span>4. ¿La evaluación mide el logro de aprendizajes establecidos?</span><div class="options"><label><input type="radio" name="p4" value="Sí" required> Sí</label><label><input type="radio" name="p4" value="No"> No</label></div></div>
+      <div class="question"><span>5. ¿Se explica a los estudiantes en el primer día de clases?</span><div class="options"><label><input type="radio" name="p5" value="Sí" required> Sí</label><label><input type="radio" name="p5" value="No"> No</label></div></div>
+      <div class="question"><span>6. ¿La bibliografía contempla material de la biblioteca virtual o física?</span><div class="options"><label><input type="radio" name="p6" value="Sí" required> Sí</label><label><input type="radio" name="p6" value="No"> No</label></div></div>
 
-        <label>Bibliografía actualizada</label>
-        <select>
-          <option>Sí</option>
-          <option>No</option>
-        </select>
+      <div class="section-title">Uso de la Plataforma</div>
+      <div class="question"><span>7. ¿Tiene organizado por semana de acuerdo al sílabo?</span><div class="options"><label><input type="radio" name="p7" value="Sí" required> Sí</label><label><input type="radio" name="p7" value="No"> No</label></div></div>
+      <div class="question"><span>8. ¿Ha subido su material didáctico en la semana de clase?</span><div class="options"><label><input type="radio" name="p8" value="Sí" required> Sí</label><label><input type="radio" name="p8" value="No"> No</label></div></div>
+      <div class="question"><span>9. ¿Usa el espacio virtual como refuerzo de las evaluaciones?</span><div class="options"><label><input type="radio" name="p9" value="Sí" required> Sí</label><label><input type="radio" name="p9" value="No"> No</label></div></div>
+      <div class="question"><span>10. ¿Retroalimenta a los estudiantes?</span><div class="options"><label><input type="radio" name="p10" value="Sí" required> Sí</label><label><input type="radio" name="p10" value="No"> No</label></div></div>
 
-        <label>Uso del SGA</label>
-        <select>
-          <option>Excelente</option>
-          <option>Regular</option>
-          <option>Deficiente</option>
-        </select>
+      <button type="submit">Guardar Evaluación</button>
+    </form>
 
-        <button>Guardar Evaluación</button>
-      </form>
-    </section>
+    <input type="text" id="searchBox" placeholder="Buscar profesor..." onkeyup="searchTable()">
 
-    <section>
-      <h2>Evaluaciones</h2>
-      <input type="text" id="searchBox" placeholder="Buscar profesor..." onkeyup="searchTable()">
-      <table id="evaluationTable" class="shadow-lg">
-        <thead>
-          <tr>
-            <th>Profesor</th>
-            <th>Curso</th>
-            <th>Sílabo Subido</th>
-            <th>Estructura Adecuada</th>
-            <th>Bibliografía Actualizada</th>
-            <th>Uso del SGA</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>HUAMAN RUIZ JUAN CARLOS</td>
-            <td>Actividades Culturales</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Excelente</td>
-          </tr>
-          <tr>
-            <td>TRUJILLO VARGAS HÉCTOR</td>
-            <td>Cálculo I</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>No</td>
-            <td>Regular</td>
-          </tr>
-          <tr>
-            <td>PALACIOS RAMIREZ MIGUEL</td>
-            <td>Economía de la Empresa</td>
-            <td>No</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Deficiente</td>
-          </tr>
-          <tr>
-            <td>FLORES CARRASCO RICARDO</td>
-            <td>Idioma I</td>
-            <td>Sí</td>
-            <td>No</td>
-            <td>No</td>
-            <td>Deficiente</td>
-          </tr>
-          <tr>
-            <td>ROJAS PEREZ JUAN</td>
-            <td>Matemática Básica</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Excelente</td>
-          </tr>
-          <tr>
-            <td>CHAVEZ MENDOZA PEDRO</td>
-            <td>Teoría de la Información y Codificación</td>
-            <td>No</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Regular</td>
-          </tr>
-          <tr>
-            <td>VILLANUEVA GONZÁLEZ LUIS</td>
-            <td>Cálculo II</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>No</td>
-            <td>Excelente</td>
-          </tr>
-          <tr>
-            <td>GARCÍA RIVERA ANDREA</td>
-            <td>Contabilidad Empresarial</td>
-            <td>Sí</td>
-            <td>No</td>
-            <td>No</td>
-            <td>Deficiente</td>
-          </tr>
-          <tr>
-            <td>PÉREZ PÉREZ JORGE</td>
-            <td>Dibujo y Geometría Descriptiva</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>Excelente</td>
-          </tr>
-          <tr>
-            <td>HUAMAN RUIZ JUAN CARLOS</td>
-            <td>Física I</td>
-            <td>Sí</td>
-            <td>Sí</td>
-            <td>No</td>
-            <td>Regular</td>
-          </tr>
-        </tbody>
-      </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Profesor</th><th>Curso</th><th>Facultad</th><th>Escuela</th><th>Código</th>
+          <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th>
+          <th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>P10</th>
+        </tr>
+      </thead>
+      <tbody id="contenidoTabla">
+  <tr><td>Juscamayta Ramírez Luis Alberto</td><td>Actividades Culturales</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG105</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td></tr>
+  <tr><td>Rocha Fernández Víctor Edgardo</td><td>Cálculo I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG101</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Ponce Fretel Santiago Eli</td><td>Cálculo I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG101</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Palomino Nazar Lizberlis Lourdes</td><td>Economía de la Empresa</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG103</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Bermeo Noriega Manuel Francisco</td><td>Contabilidad Empresarial</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG202</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Garay Torres José Marcelino</td><td>Idioma I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG104</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+  <tr><td>Tasayco Matías Néstor Raúl</td><td>Matemática Básica</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG102</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+  <tr><td>Torres Alvarado Sally Karina</td><td>Teoría de la Información y Codificación</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE101</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Reinoso Palacios Artemio Rubén</td><td>Programación Orientada a Objetos I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE301</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+  <tr><td>Mas Azahuanche Guillermo Antonio</td><td>Cálculo II</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG203</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+  <tr><td>Arauco Benavides Aquiles</td><td>Física I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG201</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+  <tr><td>Figueroa Yalán Juan Fidel</td><td>Física I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG201</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+  <tr><td>Farfán Aguilar José Antonio</td><td>Introducción a la Ingeniería de Sistemas</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE202</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+  <tr><td>García Díaz Bertila Liduvina</td><td>Programación Estructurada</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE201</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Zevallos Vera Erika Juana</td><td>Metodología de la Investigación y Redacción</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG303</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Tamayo De La Cruz Félix Erick</td><td>Base de Datos I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE302</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td></tr>
+  <tr><td>Ortega Rojas Yesmi Katia</td><td>Idioma III</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG304</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Vilcapuma Malpica Hernán Mario</td><td>Circuitos Eléctricos y Electrónicos</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE403</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+  <tr><td>Salazar Mendoza Héctor</td><td>Programación Orientada a Objetos II</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE401</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+  <tr><td>Grados Espinoza Herbert Junior</td><td>Programación Web I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE405</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+</tbody>
+
+    </table>
   </div>
-  </section>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  
   <script>
-    function searchTable() {
-      const input = document.getElementById("searchBox");
-      const filter = input.value.toUpperCase();
-      const table = document.getElementById("evaluationTable");
-      const tr = table.getElementsByTagName("tr");
-
-      for (let i = 1; i < tr.length; i++) {
-        const td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          const txtValue = td.textContent || td.innerText;
-          tr[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
-        }
-      }
-    }
+    
     fetch("nav.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("nav-placeholder").innerHTML = data;
       });
+    $(document).ready(function() {
+      $('.select-buscable').select2({
+        placeholder: "Selecciona o escribe",
+        allowClear: true,
+        width: '100%'
+      });
+    });
 
+    const formulario = document.getElementById("formulario");
+    const tabla = document.getElementById("contenidoTabla");
+
+    formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = new FormData(formulario);
+      const fila = document.createElement("tr");
+
+      fila.innerHTML = `
+        <td>${data.get("nombres")}</td>
+        <td>${data.get("curso")}</td>
+        <td>${data.get("facultad")}</td>
+        <td>${data.get("escuela")}</td>
+        <td>${data.get("codigo")}</td>
+        <td>${data.get("p1") || ''}</td>
+        <td>${data.get("p2") || ''}</td>
+        <td>${data.get("p3") || ''}</td>
+        <td>${data.get("p4") || ''}</td>
+        <td>${data.get("p5") || ''}</td>
+        <td>${data.get("p6") || ''}</td>
+        <td>${data.get("p7") || ''}</td>
+        <td>${data.get("p8") || ''}</td>
+        <td>${data.get("p9") || ''}</td>
+        <td>${data.get("p10") || ''}</td>
+      `;
+      tabla.appendChild(fila);
+      formulario.reset();
+      $('.select-buscable').val(null).trigger('change');
+    });
+
+    function searchTable() {
+      const input = document.getElementById("searchBox");
+      const filter = input.value.toUpperCase();
+      const rows = document.querySelector("#contenidoTabla").getElementsByTagName("tr");
+
+      for (let i = 0; i < rows.length; i++) {
+        const td = rows[i].getElementsByTagName("td")[0];
+        const txt = td ? td.textContent || td.innerText : "";
+        rows[i].style.display = txt.toUpperCase().includes(filter) ? "" : "none";
+      }
+    }
   </script>
 </body>
-
 </html>
