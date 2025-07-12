@@ -188,13 +188,33 @@ nav a:hover {
         transform: translateY(0);
       }
     }
+ #Titulo1{
+ text-align: center;
+  font-weight: bold;
+      font-size: 20px;
+      color: #0f172a;
+ 
+ }
+ #Titulo2{
+  text-align: center;
+  font-weight: bold;
+      font-size: 20px;
+      color: #0f172a;
+ }
+#guardar1{
+  padding: 3px 4px 3px 4px;
+  text-align: center;
+  margin: auto;
+  display: block;
   
-
+}
   </style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
   <div class="container">
+    <H2 id="Titulo1">Evaluacion Docente</H2>
+    <br>
     <form id="formulario">
       <div class="form-row">
         <div class="form-group">
@@ -346,9 +366,10 @@ nav a:hover {
       <div class="question"><span>8. ¿Ha subido su material didáctico en la semana de clase?</span><div class="options"><label><input type="radio" name="p8" value="Sí" required> Sí</label><label><input type="radio" name="p8" value="No"> No</label></div></div>
       <div class="question"><span>9. ¿Usa el espacio virtual como refuerzo de las evaluaciones?</span><div class="options"><label><input type="radio" name="p9" value="Sí" required> Sí</label><label><input type="radio" name="p9" value="No"> No</label></div></div>
       <div class="question"><span>10. ¿Retroalimenta a los estudiantes?</span><div class="options"><label><input type="radio" name="p10" value="Sí" required> Sí</label><label><input type="radio" name="p10" value="No"> No</label></div></div>
-
-      <button type="submit">Guardar Evaluación</button>
+<br>
+      <button id="guardar1" type="submit">Guardar Evaluación</button>
     </form>
+    <br>
 
     <input type="text" id="searchBox" placeholder="Buscar profesor..." onkeyup="searchTable()">
 
@@ -360,7 +381,10 @@ nav a:hover {
           <th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>P10</th>
         </tr>
       </thead>
+      <br>
+      <br>
       <tbody id="contenidoTabla">
+        <h2 id="Titulo2">Lista de Docentes Evaluados</h2>
   <tr><td>Juscamayta Ramírez Luis Alberto</td><td>Actividades Culturales</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG105</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td></tr>
   <tr><td>Rocha Fernández Víctor Edgardo</td><td>Cálculo I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG101</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
   <tr><td>Ponce Fretel Santiago Eli</td><td>Cálculo I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG101</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
