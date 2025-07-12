@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +16,7 @@
       --color-vigente: #48bb78;
       --color-vencido: #e53e3e;
     }
+
 
     @font-face {
       font-family: 'Poppins';
@@ -38,6 +40,7 @@
       margin: 0;
       padding: 0;
     }
+
     .container {
       max-width: 1000px;
       margin: 40px auto;
@@ -47,24 +50,25 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       animation: fadeIn 0.7s ease-in-out;
     }
-nav {
-  background-color: #2c5282;
-  padding: 1rem;
-  text-align: center;
-}
 
-nav a {
-  color: white;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-size: 1rem;
-}
+    nav {
+      background-color: #2c5282;
+      padding: 1rem;
+      text-align: center;
+    }
 
-nav a:hover {
-  color: #b4c7e6;
-}
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
 
- .container {
+    nav a:hover {
+      color: #b4c7e6;
+    }
+
+    .container {
       max-width: 1000px;
       margin: 40px auto;
       background: #fff;
@@ -73,6 +77,7 @@ nav a:hover {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       animation: fadeIn 0.7s ease-in-out;
     }
+
     .form-row {
       display: flex;
       gap: 20px;
@@ -89,7 +94,8 @@ nav a:hover {
       margin-bottom: 5px;
     }
 
-    select, input[type="text"] {
+    select,
+    input[type="text"] {
       width: 100%;
       padding: 6px;
       border-radius: 4px;
@@ -134,13 +140,14 @@ nav a:hover {
     }
 
     button {
-     
+
       background-color: #2c5282;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
+
 
     button:hover {
       background-color: #0f2b74;
@@ -163,7 +170,8 @@ nav a:hover {
       font-size: 13px;
     }
 
-    th, td {
+    th,
+    td {
       padding: 8px;
       border: 1px solid #ccc;
       text-align: center;
@@ -177,6 +185,7 @@ nav a:hover {
     tr:nth-child(even) {
       background-color: #f1f5f9;
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -188,10 +197,9 @@ nav a:hover {
         transform: translateY(0);
       }
     }
-  
-
   </style>
 </head>
+
 <body>
   <div id="nav-placeholder"></div>
   <div class="container">
@@ -199,9 +207,9 @@ nav a:hover {
       <div class="form-row">
         <div class="form-group">
           <label>Profesor:</label>
-          <select name="nombres" class="select-buscable" required>
+          <select name="nombres" class="select-buscable" style="padding: 10px;" required>
             <option></option>
-           <option>Juscamayta Ramírez Luis Alberto</option>
+            <option>Juscamayta Ramírez Luis Alberto</option>
             <option>Rocha Fernández Víctor Edgardo</option>
             <option>Ponce Fretel Santiago Eli</option>
             <option>Palomino Nazar Lizberlis Lourdes</option>
@@ -241,68 +249,68 @@ nav a:hover {
           <select name="curso" class="select-buscable" required>
             <option></option>
             <option>Actividades Culturales</option>
-<option>Cálculo I</option>
-<option>Economía de la Empresa</option>
-<option>Idioma I</option>
-<option>Matemática Básica</option>
-<option>Teoría de la Información y Codificación</option>
-<option>Cálculo II</option>
-<option>Contabilidad Empresarial</option>
-<option>Física I</option>
-<option>Idioma II</option>
-<option>Introducción a la Ingeniería de Sistemas</option>
-<option>Programación Estructurada</option>
-<option>Base de Datos I</option>
-<option>Cálculo III</option>
-<option>Física II</option>
-<option>Idioma III</option>
-<option>Metodología de la Investigación y Redacción</option>
-<option>Programación Orientada a Objetos I</option>
-<option>Base de Datos II</option>
-<option>Circuitos Eléctricos y Electrónicos</option>
-<option>Programación Orientada a Objetos II</option>
-<option>Programación Web I</option>
-<option>Teoría de Sistemas</option>
-<option>Base de Datos III</option>
-<option>Costos y Presupuesto</option>
-<option>Investigación de Operaciones</option>
-<option>Programación Web II</option>
-<option>Sistemas Digitales</option>
-<option>Análisis de Sistemas de Información</option>
-<option>Arquitectura y Organización de la Computadora</option>
-<option>Estadística para la Investigación Científica</option>
-<option>Métodos Numéricos</option>
-<option>Robótica y Automatización de Procesos</option>
-<option>Simulación de Sistemas</option>
-<option>Dinámica de Sistemas</option>
-<option>Diseño de Sistema de Información</option>
-<option>Diseño y Gestión de Procesos Organizacionales</option>
-<option>Ingeniería Económica y Financiera</option>
-<option>Modelo de Procesos Organizacionales</option>
-<option>Sistemas Operativos</option>
-<option>Telecomunicaciones</option>
-<option>Formulación y Evaluación de Proyectos de Inversión</option>
-<option>Gestión del Conocimiento</option>
-<option>Proyectos de Sistema de Información</option>
-<option>Redes y Comunicaciones I</option>
-<option>Sistema de Gestión de Calidad</option>
-<option>Taller de Procesos Organizacionales</option>
-<option>Teoría de Lenguajes y Compiladores</option>
-<option>Aplicaciones de Negocios Electrónicos</option>
-<option>Elaboración de Proyectos de Investigación</option>
-<option>Gestión de Procesos Tecnológicos</option>
-<option>Ingeniería de Software</option>
-<option>Proyecto de Sistemas</option>
-<option>Redes de Comunicación II</option>
-<option>Sistemas Complejos</option>
-<option>Auditoría de Sistemas</option>
-<option>Inteligencia de Negocios</option>
-<option>Planeamiento Estratégico</option>
-<option>Realidad Virtual</option>
-<option>Seguridad de la Información</option>
-<option>Sistemas Basados en Conocimiento</option>
-<option>Trabajo de Investigación</option>
-            
+            <option>Cálculo I</option>
+            <option>Economía de la Empresa</option>
+            <option>Idioma I</option>
+            <option>Matemática Básica</option>
+            <option>Teoría de la Información y Codificación</option>
+            <option>Cálculo II</option>
+            <option>Contabilidad Empresarial</option>
+            <option>Física I</option>
+            <option>Idioma II</option>
+            <option>Introducción a la Ingeniería de Sistemas</option>
+            <option>Programación Estructurada</option>
+            <option>Base de Datos I</option>
+            <option>Cálculo III</option>
+            <option>Física II</option>
+            <option>Idioma III</option>
+            <option>Metodología de la Investigación y Redacción</option>
+            <option>Programación Orientada a Objetos I</option>
+            <option>Base de Datos II</option>
+            <option>Circuitos Eléctricos y Electrónicos</option>
+            <option>Programación Orientada a Objetos II</option>
+            <option>Programación Web I</option>
+            <option>Teoría de Sistemas</option>
+            <option>Base de Datos III</option>
+            <option>Costos y Presupuesto</option>
+            <option>Investigación de Operaciones</option>
+            <option>Programación Web II</option>
+            <option>Sistemas Digitales</option>
+            <option>Análisis de Sistemas de Información</option>
+            <option>Arquitectura y Organización de la Computadora</option>
+            <option>Estadística para la Investigación Científica</option>
+            <option>Métodos Numéricos</option>
+            <option>Robótica y Automatización de Procesos</option>
+            <option>Simulación de Sistemas</option>
+            <option>Dinámica de Sistemas</option>
+            <option>Diseño de Sistema de Información</option>
+            <option>Diseño y Gestión de Procesos Organizacionales</option>
+            <option>Ingeniería Económica y Financiera</option>
+            <option>Modelo de Procesos Organizacionales</option>
+            <option>Sistemas Operativos</option>
+            <option>Telecomunicaciones</option>
+            <option>Formulación y Evaluación de Proyectos de Inversión</option>
+            <option>Gestión del Conocimiento</option>
+            <option>Proyectos de Sistema de Información</option>
+            <option>Redes y Comunicaciones I</option>
+            <option>Sistema de Gestión de Calidad</option>
+            <option>Taller de Procesos Organizacionales</option>
+            <option>Teoría de Lenguajes y Compiladores</option>
+            <option>Aplicaciones de Negocios Electrónicos</option>
+            <option>Elaboración de Proyectos de Investigación</option>
+            <option>Gestión de Procesos Tecnológicos</option>
+            <option>Ingeniería de Software</option>
+            <option>Proyecto de Sistemas</option>
+            <option>Redes de Comunicación II</option>
+            <option>Sistemas Complejos</option>
+            <option>Auditoría de Sistemas</option>
+            <option>Inteligencia de Negocios</option>
+            <option>Planeamiento Estratégico</option>
+            <option>Realidad Virtual</option>
+            <option>Seguridad de la Información</option>
+            <option>Sistemas Basados en Conocimiento</option>
+            <option>Trabajo de Investigación</option>
+
           </select>
         </div>
       </div>
@@ -334,18 +342,48 @@ nav a:hover {
       </div>
 
       <div class="section-title">Evaluación del Sílabo</div>
-      <div class="question"><span>1. ¿Lo subió en el SGA en la semana del inicio de clases?</span><div class="options"><label><input type="radio" name="p1" value="Sí" required> Sí</label><label><input type="radio" name="p1" value="No"> No</label></div></div>
-      <div class="question"><span>2. ¿Tiene la estructura del modelo oficial?</span><div class="options"><label><input type="radio" name="p2" value="Sí" required> Sí</label><label><input type="radio" name="p2" value="No"> No</label></div></div>
-      <div class="question"><span>3. ¿Está articulado con las competencias del perfil de egreso?</span><div class="options"><label><input type="radio" name="p3" value="Sí" required> Sí</label><label><input type="radio" name="p3" value="No"> No</label></div></div>
-      <div class="question"><span>4. ¿La evaluación mide el logro de aprendizajes establecidos?</span><div class="options"><label><input type="radio" name="p4" value="Sí" required> Sí</label><label><input type="radio" name="p4" value="No"> No</label></div></div>
-      <div class="question"><span>5. ¿Se explica a los estudiantes en el primer día de clases?</span><div class="options"><label><input type="radio" name="p5" value="Sí" required> Sí</label><label><input type="radio" name="p5" value="No"> No</label></div></div>
-      <div class="question"><span>6. ¿La bibliografía contempla material de la biblioteca virtual o física?</span><div class="options"><label><input type="radio" name="p6" value="Sí" required> Sí</label><label><input type="radio" name="p6" value="No"> No</label></div></div>
+      <div class="question"><span>1. ¿Lo subió en el SGA en la semana del inicio de clases?</span>
+        <div class="options"><label><input type="radio" name="p1" value="Sí" required> Sí</label><label><input
+              type="radio" name="p1" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>2. ¿Tiene la estructura del modelo oficial?</span>
+        <div class="options"><label><input type="radio" name="p2" value="Sí" required> Sí</label><label><input
+              type="radio" name="p2" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>3. ¿Está articulado con las competencias del perfil de egreso?</span>
+        <div class="options"><label><input type="radio" name="p3" value="Sí" required> Sí</label><label><input
+              type="radio" name="p3" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>4. ¿La evaluación mide el logro de aprendizajes establecidos?</span>
+        <div class="options"><label><input type="radio" name="p4" value="Sí" required> Sí</label><label><input
+              type="radio" name="p4" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>5. ¿Se explica a los estudiantes en el primer día de clases?</span>
+        <div class="options"><label><input type="radio" name="p5" value="Sí" required> Sí</label><label><input
+              type="radio" name="p5" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>6. ¿La bibliografía contempla material de la biblioteca virtual o física?</span>
+        <div class="options"><label><input type="radio" name="p6" value="Sí" required> Sí</label><label><input
+              type="radio" name="p6" value="No"> No</label></div>
+      </div>
 
       <div class="section-title">Uso de la Plataforma</div>
-      <div class="question"><span>7. ¿Tiene organizado por semana de acuerdo al sílabo?</span><div class="options"><label><input type="radio" name="p7" value="Sí" required> Sí</label><label><input type="radio" name="p7" value="No"> No</label></div></div>
-      <div class="question"><span>8. ¿Ha subido su material didáctico en la semana de clase?</span><div class="options"><label><input type="radio" name="p8" value="Sí" required> Sí</label><label><input type="radio" name="p8" value="No"> No</label></div></div>
-      <div class="question"><span>9. ¿Usa el espacio virtual como refuerzo de las evaluaciones?</span><div class="options"><label><input type="radio" name="p9" value="Sí" required> Sí</label><label><input type="radio" name="p9" value="No"> No</label></div></div>
-      <div class="question"><span>10. ¿Retroalimenta a los estudiantes?</span><div class="options"><label><input type="radio" name="p10" value="Sí" required> Sí</label><label><input type="radio" name="p10" value="No"> No</label></div></div>
+      <div class="question"><span>7. ¿Tiene organizado por semana de acuerdo al sílabo?</span>
+        <div class="options"><label><input type="radio" name="p7" value="Sí" required> Sí</label><label><input
+              type="radio" name="p7" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>8. ¿Ha subido su material didáctico en la semana de clase?</span>
+        <div class="options"><label><input type="radio" name="p8" value="Sí" required> Sí</label><label><input
+              type="radio" name="p8" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>9. ¿Usa el espacio virtual como refuerzo de las evaluaciones?</span>
+        <div class="options"><label><input type="radio" name="p9" value="Sí" required> Sí</label><label><input
+              type="radio" name="p9" value="No"> No</label></div>
+      </div>
+      <div class="question"><span>10. ¿Retroalimenta a los estudiantes?</span>
+        <div class="options"><label><input type="radio" name="p10" value="Sí" required> Sí</label><label><input
+              type="radio" name="p10" value="No"> No</label></div>
+      </div>
 
       <button type="submit">Guardar Evaluación</button>
     </form>
@@ -355,33 +393,365 @@ nav a:hover {
     <table>
       <thead>
         <tr>
-          <th>Profesor</th><th>Curso</th><th>Facultad</th><th>Escuela</th><th>Código</th>
-          <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th>
-          <th>P6</th><th>P7</th><th>P8</th><th>P9</th><th>P10</th>
+          <th>Profesor</th>
+          <th>Curso</th>
+          <th>Facultad</th>
+          <th>Escuela</th>
+          <th>Código</th>
+          <th>P1</th>
+          <th>P2</th>
+          <th>P3</th>
+          <th>P4</th>
+          <th>P5</th>
+          <th>P6</th>
+          <th>P7</th>
+          <th>P8</th>
+          <th>P9</th>
+          <th>P10</th>
         </tr>
       </thead>
       <tbody id="contenidoTabla">
-  <tr><td>Juscamayta Ramírez Luis Alberto</td><td>Actividades Culturales</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG105</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td></tr>
-  <tr><td>Rocha Fernández Víctor Edgardo</td><td>Cálculo I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG101</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Ponce Fretel Santiago Eli</td><td>Cálculo I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG101</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Palomino Nazar Lizberlis Lourdes</td><td>Economía de la Empresa</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG103</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Bermeo Noriega Manuel Francisco</td><td>Contabilidad Empresarial</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG202</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Garay Torres José Marcelino</td><td>Idioma I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG104</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
-  <tr><td>Tasayco Matías Néstor Raúl</td><td>Matemática Básica</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG102</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td></tr>
-  <tr><td>Torres Alvarado Sally Karina</td><td>Teoría de la Información y Codificación</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE101</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Reinoso Palacios Artemio Rubén</td><td>Programación Orientada a Objetos I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE301</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td></tr>
-  <tr><td>Mas Azahuanche Guillermo Antonio</td><td>Cálculo II</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG203</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
-  <tr><td>Arauco Benavides Aquiles</td><td>Física I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG201</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
-  <tr><td>Figueroa Yalán Juan Fidel</td><td>Física I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG201</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
-  <tr><td>Farfán Aguilar José Antonio</td><td>Introducción a la Ingeniería de Sistemas</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE202</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
-  <tr><td>García Díaz Bertila Liduvina</td><td>Programación Estructurada</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE201</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Zevallos Vera Erika Juana</td><td>Metodología de la Investigación y Redacción</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG303</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Tamayo De La Cruz Félix Erick</td><td>Base de Datos I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE302</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td></tr>
-  <tr><td>Ortega Rojas Yesmi Katia</td><td>Idioma III</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEG304</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Vilcapuma Malpica Hernán Mario</td><td>Circuitos Eléctricos y Electrónicos</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE403</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
-  <tr><td>Salazar Mendoza Héctor</td><td>Programación Orientada a Objetos II</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE401</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-  <tr><td>Grados Espinoza Herbert Junior</td><td>Programación Web I</td><td>FIIS</td><td>Ingeniería de Sistemas</td><td>ISEE405</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
-</tbody>
+        <tr>
+          <td>Juscamayta Ramírez Luis Alberto</td>
+          <td>Actividades Culturales</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG105</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Rocha Fernández Víctor Edgardo</td>
+          <td>Cálculo I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG101</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Ponce Fretel Santiago Eli</td>
+          <td>Cálculo I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG101</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Palomino Nazar Lizberlis Lourdes</td>
+          <td>Economía de la Empresa</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG103</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Bermeo Noriega Manuel Francisco</td>
+          <td>Contabilidad Empresarial</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG202</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Garay Torres José Marcelino</td>
+          <td>Idioma I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG104</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Tasayco Matías Néstor Raúl</td>
+          <td>Matemática Básica</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG102</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Torres Alvarado Sally Karina</td>
+          <td>Teoría de la Información y Codificación</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE101</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Reinoso Palacios Artemio Rubén</td>
+          <td>Programación Orientada a Objetos I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE301</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Mas Azahuanche Guillermo Antonio</td>
+          <td>Cálculo II</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG203</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Arauco Benavides Aquiles</td>
+          <td>Física I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG201</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Figueroa Yalán Juan Fidel</td>
+          <td>Física I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG201</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Farfán Aguilar José Antonio</td>
+          <td>Introducción a la Ingeniería de Sistemas</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE202</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>García Díaz Bertila Liduvina</td>
+          <td>Programación Estructurada</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE201</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Zevallos Vera Erika Juana</td>
+          <td>Metodología de la Investigación y Redacción</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG303</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Tamayo De La Cruz Félix Erick</td>
+          <td>Base de Datos I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE302</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Ortega Rojas Yesmi Katia</td>
+          <td>Idioma III</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEG304</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Vilcapuma Malpica Hernán Mario</td>
+          <td>Circuitos Eléctricos y Electrónicos</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE403</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Salazar Mendoza Héctor</td>
+          <td>Programación Orientada a Objetos II</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE401</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Grados Espinoza Herbert Junior</td>
+          <td>Programación Web I</td>
+          <td>FIIS</td>
+          <td>Ingeniería de Sistemas</td>
+          <td>ISEE405</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Sí</td>
+        </tr>
+      </tbody>
 
     </table>
   </div>
@@ -389,15 +759,15 @@ nav a:hover {
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-  
+
   <script>
-    
+
     fetch("nav.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("nav-placeholder").innerHTML = data;
       });
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('.select-buscable').select2({
         placeholder: "Selecciona o escribe",
         allowClear: true,
