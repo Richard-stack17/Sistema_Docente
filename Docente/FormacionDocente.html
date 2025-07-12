@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro de Formación Docente - UNAC</title>
   <link href="./src/output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
   <style>
     :root {
       --color-primario: #2357a0;
@@ -201,7 +205,46 @@
     <h2 class="text-[1.6rem] font-bold text-blue-900 my-5 text-left">Registro de Formación Docente</h1>
 
       <form id="formFormacion">
-        <input type="text" id="nombreDocente" placeholder="Nombre del Docente" required />
+        <div class="form-group">
+  
+  <select name="nombres" class="select-buscable" required>
+    <option></option>
+           <option>Juscamayta Ramírez Luis Alberto</option>
+            <option>Rocha Fernández Víctor Edgardo</option>
+            <option>Ponce Fretel Santiago Eli</option>
+            <option>Palomino Nazar Lizberlis Lourdes</option>
+            <option>Bermeo Noriega Manuel Francisco</option>
+            <option>Garay Torres José Marcelino</option>
+            <option>Tasayco Matías Néstor Raúl</option>
+            <option>Torres Alvarado Sally Karina</option>
+            <option>Reinoso Palacios Artemio Rubén</option>
+            <option>Mas Azahuanche Guillermo Antonio</option>
+            <option>Arauco Benavides Aquiles</option>
+            <option>Figueroa Yalan Juan Fidel</option>
+            <option>Farfan Aguilar Jose Antonio</option>
+            <option>Garcaa Diaz Bertila Liduvina</option>
+            <option>Zevallos Vera Erika Juana</option>
+            <option>Tamayo De La Cruz Felix Erick</option>
+            <option>Ortega Rojas Yesmi Katia</option>
+            <option>Vilcapuma Malpica Hernán Mario</option>
+            <option>Salazar Mendoza Hector</option>
+            <option>Grados Espinoza Herbert Junior</option>
+            <option>Valdivia Sánchez Luis Alberto</option>
+            <option>Torre Camones Anival Alfredo</option>
+            <option>Ramirez Veliz Juan Francisco</option>
+            <option>Pomachagua Pérez Germán Elías</option>
+            <option>Huatay Enríquez Reenaty Amanda</option>
+            <option>Malca Vicente Eddie Christian</option>
+            <option>Zapata Villar Loyo Pepe</option>
+            <option>Salazar Villavicencio Ismael Edwin</option>
+            <option>Vilchez Inga Cesar</option>
+            <option>Arteaga Cortez Humberto Urbano</option>
+            <option>Aradiel Castañeda Hilario</option>
+            <option>Alcantara Ramerez Manuel Abelardo</option>
+            <option>Incacari Sancho Gerber Federico</option>
+  </select>
+</div>
+
         <select id="tipoFormacion" required>
           <option value="">Tipo de Formación</option>
           <option value="Grado">Grado</option>
@@ -324,6 +367,17 @@
       );
     });
   </script>
+  <script>
+  $(document).ready(function() {
+    $('.select-buscable').select2({
+      placeholder: "Seleccione Profesor",
+      allowClear: true,
+      width: '102%',
+      height: '200%'
+    });
+  });
+</script>
+
 </body>
 
 </html>
