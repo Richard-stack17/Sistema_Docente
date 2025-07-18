@@ -7,8 +7,8 @@
   <title>Registro de Formación Docente - UNAC</title>
   <link href="./src/output.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
   <style>
     :root {
@@ -207,10 +207,10 @@
 
       <form id="formFormacion">
         <div class="form-group">
-  
-  <select id="nombreDocente" name="nombres" class="select-buscable" required>
-    <option></option>
-           <option>Juscamayta Ramírez Luis Alberto</option>
+
+          <select id="nombreDocente" name="nombres" class="select-buscable" required>
+            <option></option>
+            <option>Juscamayta Ramírez Luis Alberto</option>
             <option>Rocha Fernández Víctor Edgardo</option>
             <option>Ponce Fretel Santiago Eli</option>
             <option>Palomino Nazar Lizberlis Lourdes</option>
@@ -243,8 +243,8 @@
             <option>Aradiel Castañeda Hilario</option>
             <option>Alcantara Ramerez Manuel Abelardo</option>
             <option>Incacari Sancho Gerber Federico</option>
-  </select>
-</div>
+          </select>
+        </div>
 
         <select id="tipoFormacion" required>
           <option value="">Tipo de Formación</option>
@@ -292,7 +292,7 @@
       .then(data => {
         document.getElementById("nav-placeholder").innerHTML = data;
       });
-      
+
     const form = document.getElementById('formFormacion');
     const tabla = document.getElementById('tablaFormaciones');
     const buscador = document.getElementById('buscador');
@@ -344,13 +344,31 @@
       const nombre = document.getElementById('nombreDocente').value.trim();
       const tipo = document.getElementById('tipoFormacion').value;
       const descripcion = document.getElementById('descripcion').value.trim();
-      const fechaVenc = document.getElementById('fechaVencimiento').value;
+      const fechaVencStr = document.getElementById('fechaVencimiento').value;
 
-      if (nombre && tipo && descripcion && fechaVenc) {
-        agregarFila(nombre, tipo, descripcion, fechaVenc);
-        form.reset();
+      const fechaVenc = new Date(fechaVencStr);
+      const hoy = new Date();
+      hoy.setHours(0, 0, 0, 0); // para comparar solo fechas sin horas
+
+      if (!nombre || !tipo || !descripcion || !fechaVencStr) {
+        alert("Por favor, complete todos los campos.");
+        return;
       }
+
+      if (isNaN(fechaVenc.getTime())) {
+        alert("La fecha ingresada no es válida.");
+        return;
+      }
+
+      if (fechaVenc <= hoy) {
+        alert("La fecha de vencimiento debe ser mayor a la fecha actual.");
+        return;
+      }
+
+      agregarFila(nombre, tipo, descripcion, fechaVencStr);
+      form.reset();
     });
+
 
     buscador.addEventListener('input', function () {
       const valor = buscador.value.toLowerCase();
@@ -376,15 +394,15 @@
     });
   </script>
   <script>
-  $(document).ready(function() {
-    $('.select-buscable').select2({
-      placeholder: "Seleccione Profesor",
-      allowClear: true,
-      width: '102%',
-      height: '200%'
+    $(document).ready(function () {
+      $('.select-buscable').select2({
+        placeholder: "Seleccione Profesor",
+        allowClear: true,
+        width: '102%',
+        height: '200%'
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 
