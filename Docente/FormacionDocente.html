@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" >
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro de Formación Docente - UNAC</title>
   <link href="./src/output.css" rel="stylesheet">
@@ -291,27 +292,34 @@
       .then(data => {
         document.getElementById("nav-placeholder").innerHTML = data;
       });
+      
     const form = document.getElementById('formFormacion');
     const tabla = document.getElementById('tablaFormaciones');
     const buscador = document.getElementById('buscador');
 
     const formacionesEjemplo = [
-      { nombre: "Luis Hernández", tipo: "Grado", descripcion: "Maestría en Educación Superior", fecha: "2026-03-15" },
-      { nombre: "Ana Ríos", tipo: "Curso", descripcion: "Didáctica digital avanzada", fecha: "2023-12-01" },
-      { nombre: "Carlos López", tipo: "Diplomado", descripcion: "Gestión educativa", fecha: "2025-09-30" },
-      { nombre: "María Chávez", tipo: "Movilidad", descripcion: "Intercambio con UNAM", fecha: "2024-06-10" },
-      { nombre: "Javier Salazar", tipo: "Curso", descripcion: "Actualización curricular", fecha: "2024-12-20" },
-      { nombre: "Dr. Jorge Quispe", tipo: "Grado", descripcion: "Doctorado en Informática", fecha: "2027-04-10" },
-      { nombre: "Mg. Fiorella Taipe", tipo: "Diplomado", descripcion: "Educación en línea", fecha: "2025-11-11" },
-      { nombre: "Ing. Julio Ríos", tipo: "Curso", descripcion: "Ciberseguridad avanzada", fecha: "2024-09-01" },
-      { nombre: "Ing. Luz Ramos", tipo: "Curso", descripcion: "Big Data y Analítica", fecha: "2023-11-15" },
-      { nombre: "Dr. Pedro Gutiérrez", tipo: "Grado", descripcion: "Doctorado en Sistemas Inteligentes", fecha: "2026-10-22" },
-      { nombre: "Mg. Sandra Castañeda", tipo: "Movilidad", descripcion: "Estancia académica en Chile", fecha: "2024-07-05" },
-      { nombre: "Dr. José Alva", tipo: "Curso", descripcion: "Gestión de proyectos con PMI", fecha: "2024-08-15" },
-      { nombre: "Ing. Marco Torres", tipo: "Diplomado", descripcion: "Transformación digital", fecha: "2025-04-18" },
-      { nombre: "Ing. Raquel Medina", tipo: "Curso", descripcion: "Machine Learning", fecha: "2024-11-03" },
-      { nombre: "Mg. Carmen Díaz", tipo: "Grado", descripcion: "Maestría en Gestión Educativa", fecha: "2025-06-25" }
+      { nombre: "Juscamayta Ramírez Luis Alberto", tipo: "Grado", descripcion: "Maestría en Educación Superior", fecha: "2026-03-15" },
+      { nombre: "Rocha Fernández Víctor Edgardo", tipo: "Curso", descripcion: "Didáctica digital avanzada", fecha: "2023-12-01" },
+      { nombre: "Ponce Fretel Santiago Eli", tipo: "Diplomado", descripcion: "Gestión educativa", fecha: "2025-09-30" },
+      { nombre: "Palomino Nazar Lizberlis Lourdes", tipo: "Movilidad", descripcion: "Intercambio académico", fecha: "2024-06-10" },
+      { nombre: "Bermeo Noriega Manuel Francisco", tipo: "Curso", descripcion: "Actualización curricular", fecha: "2024-12-20" },
+      { nombre: "Garay Torres José Marcelino", tipo: "Grado", descripcion: "Doctorado en Informática", fecha: "2027-04-10" },
+      { nombre: "Tasayco Matías Néstor Raúl", tipo: "Diplomado", descripcion: "Educación en línea", fecha: "2025-11-11" },
+      { nombre: "Torres Alvarado Sally Karina", tipo: "Curso", descripcion: "Ciberseguridad avanzada", fecha: "2024-09-01" },
+      { nombre: "Reinoso Palacios Artemio Rubén", tipo: "Curso", descripcion: "Big Data y Analítica", fecha: "2023-11-15" },
+      { nombre: "Mas Azahuanche Guillermo Antonio", tipo: "Grado", descripcion: "Doctorado en Sistemas Inteligentes", fecha: "2026-10-22" },
+      { nombre: "Arauco Benavides Aquiles", tipo: "Movilidad", descripcion: "Estancia académica en Chile", fecha: "2024-07-05" },
+      { nombre: "Figueroa Yalan Juan Fidel", tipo: "Curso", descripcion: "Gestión de proyectos con PMI", fecha: "2024-08-15" },
+      { nombre: "Farfan Aguilar Jose Antonio", tipo: "Diplomado", descripcion: "Transformación digital", fecha: "2025-04-18" },
+      { nombre: "Garcaa Diaz Bertila Liduvina", tipo: "Curso", descripcion: "Machine Learning", fecha: "2024-11-03" },
+      { nombre: "Zevallos Vera Erika Juana", tipo: "Grado", descripcion: "Maestría en Gestión Educativa", fecha: "2025-06-25" },
+      { nombre: "Tamayo De La Cruz Felix Erick", tipo: "Grado", descripcion: "Maestría en Administración", fecha: "2025-05-20" },
+      { nombre: "Ortega Rojas Yesmi Katia", tipo: "Curso", descripcion: "Educación inclusiva", fecha: "2023-10-10" },
+      { nombre: "Vilcapuma Malpica Hernán Mario", tipo: "Diplomado", descripcion: "Innovación pedagógica", fecha: "2025-07-14" },
+      { nombre: "Salazar Mendoza Hector", tipo: "Curso", descripcion: "Aprendizaje digital", fecha: "2024-05-28" },
+      { nombre: "Grados Espinoza Herbert Junior", tipo: "Movilidad", descripcion: "Visita académica internacional", fecha: "2024-04-09" }
     ];
+
 
     function agregarFila(nombre, tipo, descripcion, fechaVenc) {
       const fechaHoy = new Date().setHours(0, 0, 0, 0);
