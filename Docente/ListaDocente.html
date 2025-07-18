@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <title>HU12,HU13-Lista de Docentes(Destacados o capacitacion)</title>
   <link href="./src/output.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -148,6 +150,8 @@
       <button class="btn-filtrar" onclick="filtrar('todos')">Mostrar Todos</button>
       <button class="btn-filtrar" onclick="filtrar('destacados')">Destacados</button>
       <button class="btn-filtrar" onclick="filtrar('capacitacion')">Capacitación</button>
+      <button class="btn-filtrar" onclick="exportarExcel()">Exportar a Excel</button>
+
     </div>
 
     <table class="shadow-lg">
@@ -247,6 +251,15 @@
       .then(data => {
         document.getElementById("nav-placeholder").innerHTML = data;
       });
+
+      function exportarExcel() {
+  const tabla = document.querySelector("table");
+  const wb = XLSX.utils.book_new();
+  const ws = XLSX.utils.table_to_sheet(tabla);
+  XLSX.utils.book_append_sheet(wb, ws, "Docentes");
+  XLSX.writeFile(wb, "lista_docentes.xlsx");
+}
+
   </script>
 
 </body>
